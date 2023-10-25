@@ -58,7 +58,7 @@ class music_cog(commands.Cog):
     def extract_YT(self, url):
         with YoutubeDL(self.YTDL_OPTIONS) as ydl:
             try:
-                info = ydl.extract_info(url, download=False)
+                info = ydl.extract_info(url, download=False) or {}
             except:
                 return False
 
